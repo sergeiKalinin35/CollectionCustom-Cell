@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCell" reuseIdentifier="CollectionViewCell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="CollectionCustom_Cell" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="CollectionCustom_Cell" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -19,8 +19,8 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-LQ-11i">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="2WW-a7-Rr1"/>
-                            <constraint firstAttribute="width" constant="200" id="JGG-Ti-vEJ"/>
+                            <constraint firstAttribute="width" constant="200" id="OLc-0v-0eJ"/>
+                            <constraint firstAttribute="height" constant="200" id="Y5K-uV-u0m"/>
                         </constraints>
                     </imageView>
                 </subviews>

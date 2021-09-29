@@ -11,8 +11,9 @@ class ViewController: UIViewController {
     
     var images = [UIImage]()
     
-    
-    
+    let countCells = 2
+    let offset: CGFloat = 2.0
+    let cellId = "cell"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         
         
         // здесь лежат все наши картинки массив заполнили !!!
@@ -37,14 +38,14 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CollectionViewCell
         
         let image = images[indexPath.item]
         
@@ -53,5 +54,24 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
        return cell
     }
+    
+    // размеры в ячейках
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let frameCV = collectionView.frame
+        
+        let withCell = frameCV.width / CGFloat(countCells)
+        let heightCell = withCell
+        
+        
+        
+        let spacing = CGFloat((countCells + 1)) * offset / CGFloat(countCells)
+        
+        
+        return CGSize(width: withCell - spacing, height: heightCell - (offset * 2))
+    }
    
 }
+
+
